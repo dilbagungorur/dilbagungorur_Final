@@ -5,6 +5,6 @@ Geliştirilecek olan arayüz ile birlikte araç sahibinin otoparkı internet ort
 Araç sahiplerinin otoparka gitmeden önce internetten doluluk oranını görmesi ve internet üzerinden rezerve imkânın sağlanması yapılması için oluşturulan bu ara yüzde başlangıçta bağlantı noktası belirlenir.
 Tasarlanmış olan bu proje ile birlikte; otopark, özel kurum alanları, kampüs alanları gibi yerlerde araç sahiplerinin girişteki süre kayıpları azaltmaya, bu alanlar içerisinde park edilecek en yakın boş alanlar sistem tarafından belirlenme ve bu alanlarda çalışacak olan fazla eleman ihtiyacı da azaltılması hedeflenmiştir.
 ![otopark3](https://github.com/dilbagungorur/dilbagungorur_Final/assets/117578845/707dfb45-a2dc-4bee-84af-a5e8e7bca7e2)
-Hatalar giderilmiş ve ilk sürüm kullanılır hale getirilmiştir.Seçilen vasıta türüne göre otoparklar getirildi.Eğer vasıta türü ağır vasıta ise açık otopark getirildi.Binek araç vasıta türünde ise kapalı otopark getirildi.Seçtiğimiz otoparkın ismi,adresi,çalışma saati ve kapasitesi sitemde gösterildi.
+Hatalar giderilmiş ve ilk sürüm kullanılır hale getirilmiştir.Seçilen vasıta türüne göre otoparklar getirildi.Eğer vasıta türü ağır vasıta ise açık otopark getirildi.Binek araç vasıta türünde ise kapalı otopark getirildi.Seçtiğimiz otoparkın ismi,adresi,çalışma saati ve kapasitesi sistemde gösterildi.
 
 ![otopark2](https://github.com/dilbagungorur/dilbagungorur_Final/assets/117578845/b2d873b9-2821-4be1-a594-df0bba77f3fd)

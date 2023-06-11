@@ -1,6 +1,7 @@
 # dilbagungorur_Final
-OtoparkSistem
+Otopark Sistem
 Projenin Üst Seviye Görünümü
+
 Geliştirilecek olan arayüz ile birlikte araç sahibinin otoparkı internet ortamında görebilme imkânın sağlanması .
 Araç sahiplerinin otoparka gitmeden önce internetten doluluk oranını görmesi ve internet üzerinden rezerve imkânın sağlanması yapılması için oluşturulan bu ara yüzde başlangıçta bağlantı noktası belirlenir.
 Tasarlanmış olan bu proje ile birlikte; otopark, özel kurum alanları, kampüs alanları gibi yerlerde araç sahiplerinin girişteki süre kayıpları azaltmaya, bu alanlar içerisinde park edilecek en yakın boş alanlar sistem tarafından belirlenme ve bu alanlarda çalışacak olan fazla eleman ihtiyacı da azaltılması hedeflenmiştir.

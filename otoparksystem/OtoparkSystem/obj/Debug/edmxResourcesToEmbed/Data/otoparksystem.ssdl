@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OTOPARKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AracTurleri">
+    <Key>
+      <PropertyRef Name="NumaraId" />
+    </Key>
+    <Property Name="NumaraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="StatusTypeId" Type="int" Nullable="false" />
+    <Property Name="image" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="AracTurleriOtoPark">
+    <Key>
+      <PropertyRef Name="NumaraId" />
+    </Key>
+    <Property Name="NumaraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AracTurleriNumaraId" Type="int" Nullable="false" />
+    <Property Name="OtoParkNumaraId" Type="int" Nullable="false" />
+    <Property Name="StatusTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtoPark">
+    <Key>
+      <PropertyRef Name="NumaraId" />
+    </Key>
+    <Property Name="NumaraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Kapasite" Type="int" Nullable="false" />
+    <Property Name="StatusTypeId" Type="int" Nullable="false" />
+    <Property Name="PARK_NAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="LOCATION_NAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="PARK_TYPE_ID" Type="nvarchar" MaxLength="250" />
+    <Property Name="PARK_TYPE_DESC" Type="nvarchar" MaxLength="250" />
+    <Property Name="CAPACITY_OF_PARK" Type="int" />
+    <Property Name="WORKING_TIME" Type="nvarchar" MaxLength="250" />
+    <Property Name="COUNTY_NAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="rank" Type="nvarchar" MaxLength="250" />
+    <Property Name="coordinatesx" Type="nvarchar" MaxLength="250" />
+    <Property Name="coordinatesy" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_AracTurleri_AracTurleri">
+    <End Role="AracTurleri" Type="Self.AracTurleri" Multiplicity="1" />
+    <End Role="AracTurleriOtoPark" Type="Self.AracTurleriOtoPark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AracTurleri">
+        <PropertyRef Name="NumaraId" />
+      </Principal>
+      <Dependent Role="AracTurleriOtoPark">
+        <PropertyRef Name="AracTurleriNumaraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AracTurleri_OtoPark">
+    <End Role="OtoPark" Type="Self.OtoPark" Multiplicity="1" />
+    <End Role="AracTurleriOtoPark" Type="Self.AracTurleriOtoPark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OtoPark">
+        <PropertyRef Name="NumaraId" />
+      </Principal>
+      <Dependent Role="AracTurleriOtoPark">
+        <PropertyRef Name="OtoParkNumaraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OTOPARKModelStoreContainer">
+    <EntitySet Name="AracTurleri" EntityType="Self.AracTurleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AracTurleriOtoPark" EntityType="Self.AracTurleriOtoPark" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtoPark" EntityType="Self.OtoPark" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AracTurleri_AracTurleri" Association="Self.FK_AracTurleri_AracTurleri">
+      <End Role="AracTurleri" EntitySet="AracTurleri" />
+      <End Role="AracTurleriOtoPark" EntitySet="AracTurleriOtoPark" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AracTurleri_OtoPark" Association="Self.FK_AracTurleri_OtoPark">
+      <End Role="OtoPark" EntitySet="OtoPark" />
+      <End Role="AracTurleriOtoPark" EntitySet="AracTurleriOtoPark" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

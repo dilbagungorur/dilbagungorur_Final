@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OTOPARKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OTOPARKEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AracTurleri" EntityType="OTOPARKModel.AracTurleri" />
+    <EntitySet Name="AracTurleriOtoPark" EntityType="OTOPARKModel.AracTurleriOtoPark" />
+    <EntitySet Name="OtoPark" EntityType="OTOPARKModel.OtoPark" />
+    <AssociationSet Name="FK_AracTurleri_AracTurleri" Association="OTOPARKModel.FK_AracTurleri_AracTurleri">
+      <End Role="AracTurleri" EntitySet="AracTurleri" />
+      <End Role="AracTurleriOtoPark" EntitySet="AracTurleriOtoPark" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AracTurleri_OtoPark" Association="OTOPARKModel.FK_AracTurleri_OtoPark">
+      <End Role="OtoPark" EntitySet="OtoPark" />
+      <End Role="AracTurleriOtoPark" EntitySet="AracTurleriOtoPark" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AracTurleri">
+    <Key>
+      <PropertyRef Name="NumaraId" />
+    </Key>
+    <Property Name="NumaraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StatusTypeId" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AracTurleriOtoPark" Relationship="OTOPARKModel.FK_AracTurleri_AracTurleri" FromRole="AracTurleri" ToRole="AracTurleriOtoPark" />
+  </EntityType>
+  <EntityType Name="AracTurleriOtoPark">
+    <Key>
+      <PropertyRef Name="NumaraId" />
+    </Key>
+    <Property Name="NumaraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AracTurleriNumaraId" Type="Int32" Nullable="false" />
+    <Property Name="OtoParkNumaraId" Type="Int32" Nullable="false" />
+    <Property Name="StatusTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AracTurleri" Relationship="OTOPARKModel.FK_AracTurleri_AracTurleri" FromRole="AracTurleriOtoPark" ToRole="AracTurleri" />
+    <NavigationProperty Name="OtoPark" Relationship="OTOPARKModel.FK_AracTurleri_OtoPark" FromRole="AracTurleriOtoPark" ToRole="OtoPark" />
+  </EntityType>
+  <EntityType Name="OtoPark">
+    <Key>
+      <PropertyRef Name="NumaraId" />
+    </Key>
+    <Property Name="NumaraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kapasite" Type="Int32" Nullable="false" />
+    <Property Name="StatusTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PARK_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PARK_TYPE_ID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PARK_TYPE_DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_OF_PARK" Type="Int32" />
+    <Property Name="WORKING_TIME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTY_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="rank" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="coordinatesx" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="coordinatesy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AracTurleriOtoPark" Relationship="OTOPARKModel.FK_AracTurleri_OtoPark" FromRole="OtoPark" ToRole="AracTurleriOtoPark" />
+  </EntityType>
+  <Association Name="FK_AracTurleri_AracTurleri">
+    <End Type="OTOPARKModel.AracTurleri" Role="AracTurleri" Multiplicity="1" />
+    <End Type="OTOPARKModel.AracTurleriOtoPark" Role="AracTurleriOtoPark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AracTurleri">
+        <PropertyRef Name="NumaraId" />
+      </Principal>
+      <Dependent Role="AracTurleriOtoPark">
+        <PropertyRef Name="AracTurleriNumaraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AracTurleri_OtoPark">
+    <End Type="OTOPARKModel.OtoPark" Role="OtoPark" Multiplicity="1" />
+    <End Type="OTOPARKModel.AracTurleriOtoPark" Role="AracTurleriOtoPark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OtoPark">
+        <PropertyRef Name="NumaraId" />
+      </Principal>
+      <Dependent Role="AracTurleriOtoPark">
+        <PropertyRef Name="OtoParkNumaraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

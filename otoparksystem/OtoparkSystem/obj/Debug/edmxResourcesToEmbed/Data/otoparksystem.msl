@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OTOPARKModelStoreContainer" CdmEntityContainer="OTOPARKEntities">
+    <EntitySetMapping Name="AracTurleri">
+      <EntityTypeMapping TypeName="OTOPARKModel.AracTurleri">
+        <MappingFragment StoreEntitySet="AracTurleri">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="StatusTypeId" ColumnName="StatusTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NumaraId" ColumnName="NumaraId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AracTurleriOtoPark">
+      <EntityTypeMapping TypeName="OTOPARKModel.AracTurleriOtoPark">
+        <MappingFragment StoreEntitySet="AracTurleriOtoPark">
+          <ScalarProperty Name="StatusTypeId" ColumnName="StatusTypeId" />
+          <ScalarProperty Name="OtoParkNumaraId" ColumnName="OtoParkNumaraId" />
+          <ScalarProperty Name="AracTurleriNumaraId" ColumnName="AracTurleriNumaraId" />
+          <ScalarProperty Name="NumaraId" ColumnName="NumaraId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtoPark">
+      <EntityTypeMapping TypeName="OTOPARKModel.OtoPark">
+        <MappingFragment StoreEntitySet="OtoPark">
+          <ScalarProperty Name="coordinatesy" ColumnName="coordinatesy" />
+          <ScalarProperty Name="coordinatesx" ColumnName="coordinatesx" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="COUNTY_NAME" ColumnName="COUNTY_NAME" />
+          <ScalarProperty Name="WORKING_TIME" ColumnName="WORKING_TIME" />
+          <ScalarProperty Name="CAPACITY_OF_PARK" ColumnName="CAPACITY_OF_PARK" />
+          <ScalarProperty Name="PARK_TYPE_DESC" ColumnName="PARK_TYPE_DESC" />
+          <ScalarProperty Name="PARK_TYPE_ID" ColumnName="PARK_TYPE_ID" />
+          <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+          <ScalarProperty Name="PARK_NAME" ColumnName="PARK_NAME" />
+          <ScalarProperty Name="StatusTypeId" ColumnName="StatusTypeId" />
+          <ScalarProperty Name="Kapasite" ColumnName="Kapasite" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NumaraId" ColumnName="NumaraId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
